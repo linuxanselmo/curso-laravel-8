@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\{
+    PostController
+};
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/posts', [PostController::Class, 'index'])->name('posts');
 
 Route::get('/', function () {
     return view('welcome');
